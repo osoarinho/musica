@@ -4,77 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soarinho | Músico para Eventos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../marca-soarinho.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            50: '#f8f8f8',
+                            100: '#e0e0e0',
+                            200: '#b0b0b0',
+                            300: '#808080',
+                            400: '#5a5a5a',
+                            500: '#2a2a2a',
+                            600: '#1a1a1a',
+                            700: '#0f0f0f',
+                            800: '#0a0a0a',
+                            900: '#050505',
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'shimmer': 'shimmer 3s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { 'box-shadow': '0 0 10px rgba(255, 255, 255, 0.3)' },
+                            '100%': { 'box-shadow': '0 0 25px rgba(255, 255, 255, 0.6)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --dark: #121212;
-            --dark-secondary: #1e1e1e;
-            --gray-dark: #2c2c2c;
-            --gray: #6c757d;
-            --gray-light: #a0a0a0;
-            --light: #f8f9fa;
-            --white: #ffffff;
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
-            background-color: var(--dark);
-            color: var(--light);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
         }
         
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 50%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            letter-spacing: 2px;
         }
         
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--gray-light);
+        .glass-effect {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .card-effect {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(15, 15, 15, 0.8));
+            border: 1px solid rgba(42, 42, 42, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-effect:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.1);
         }
         
         .btn-glow {
-            background-color: transparent;
-            border: 1px solid var(--gray-light);
-            color: var(--light);
-            padding: 12px 30px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            margin: 0 10px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
             position: relative;
             overflow: hidden;
         }
         
-        .btn-glow:hover {
-            color: var(--white);
-            border-color: var(--white);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
-        }
-        
-        .btn-glow:after {
+        .btn-glow::after {
             content: '';
             position: absolute;
             top: 0;
@@ -85,226 +116,83 @@
             transition: 0.5s;
         }
         
-        .btn-glow:hover:after {
+        .btn-glow:hover::after {
             left: 100%;
         }
         
+        .btn-glow:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+        }
+        
         .btn-primary-glow {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--white);
-            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
         
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            letter-spacing: 1px;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 2px;
-            background: var(--gray-light);
-            margin: 15px auto;
-            border-radius: 2px;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Music Player */
-        .player-container {
-            background-color: var(--dark-secondary);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--gray-dark);
-        }
-        
-        .player-placeholder {
-            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-            height: 400px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
-            font-size: 1.2rem;
-            border: 1px solid var(--gray-dark);
-        }
-        
-        /* Events Carousel */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--gray-dark);
-        }
-        
-        .carousel-item {
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            border: 1px solid var(--gray-dark);
-        }
-        
-        .carousel-control-prev, .carousel-control-next {
-            width: 5%;
-        }
-        
-        .carousel-control-prev-icon, .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            padding: 15px;
-            border: 1px solid var(--gray-light);
-        }
-        
-        /* Contact Form */
-        .contact-form {
-            background-color: var(--dark-secondary);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--gray-dark);
-        }
-        
-        .form-control {
-            background-color: #2c2c2c;
-            border: 1px solid #444;
-            color: white;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            background-color: #2c2c2c;
-            border-color: var(--gray-light);
-            color: white;
-            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #0a0a0a;
-            padding: 40px 0 20px;
-            border-top: 1px solid var(--gray-dark);
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--dark-secondary);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin: 0 10px;
-            color: var(--light);
-            transition: all 0.3s ease;
-            border: 1px solid var(--gray-dark);
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--gray-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Animations */
-        .fade-in {
+        .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: all 0.8s ease-out;
         }
         
-        .fade-in.visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
         
-        /* Glow Effects */
-        .glow-text {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        .carousel-item {
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
         }
         
-        .glow-border {
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
             .carousel-item {
-                height: 300px;
-            }
-            
-            .btn-glow {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
+                min-height: 300px;
             }
         }
     </style>
 </head>
-<body>
+<body class="bg-dark-900 text-dark-100 font-inter overflow-x-hidden">
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 hero-content fade-in">
-                    <h1 class="glow-text">SOARINHO</h1>
-                    <p>Música que transforma momentos em memórias</p>
-                    <div class="mt-4">
-                        <a href="#contact" class="btn btn-glow btn-primary-glow">Contrate para Evento</a>
-                        <a href="#music" class="btn btn-glow">Ouça Meu Trabalho</a>
-                    </div>
+    <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center; background-size: cover;">
+        <div class="container mx-auto px-4 z-10 relative">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <div class="mb-6 animate-float">
+                    <img src="../logo-soarinho.png" alt="SOARINHO" class="h-20 md:h-32 lg:h-40 w-auto mx-auto">
+                </div>
+                <p class="text-xl md:text-2xl text-dark-200 mb-10">Música que transforma momentos em memórias</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="btn-glow btn-primary-glow py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Contrate para Evento
+                    </a>
+                    <a href="#music" class="btn-glow py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center">
+                        <i class="fas fa-music mr-2"></i>
+                        Ouça Meu Trabalho
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Music Player Section -->
-    <section id="music" class="bg-dark-secondary">
-        <div class="container">
-            <h2 class="section-title fade-in">Minha Música</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="player-container fade-in glow-border">
-                        <div class="player-placeholder">
-                            <div class="text-center">
-                                <i class="fas fa-music fa-3x mb-3" style="color: #a0a0a0;"></i>
-                                <p>Player de música integrado (Spotify, YouTube ou SoundCloud)</p>
-                            </div>
+    <section id="music" class="py-20 md:py-32 bg-dark-800 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Minha Música</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto reveal">
+                <div class="card-effect rounded-3xl p-8 md:p-12">
+                    <div class="bg-gradient-to-br from-dark-700 to-dark-800 rounded-xl h-96 flex items-center justify-center border border-dark-600">
+                        <div class="text-center">
+                            <i class="fas fa-music text-6xl text-dark-400 mb-4"></i>
+                            <p class="text-dark-400 text-lg">Player de música integrado (Spotify, YouTube ou SoundCloud)</p>
                         </div>
                     </div>
                 </div>
@@ -313,45 +201,46 @@
     </section>
 
     <!-- Events Carousel -->
-    <section id="events">
-        <div class="container">
-            <h2 class="section-title fade-in">Eventos Passados</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div id="eventsCarousel" class="carousel slide carousel-container fade-in" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                                <div class="carousel-caption">
-                                    <h5>Casamento Ana & João</h5>
-                                    <p>Cerimônia íntima com repertório personalizado</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
-                                <div class="carousel-caption">
-                                    <h5>Festa Corporativa TechCon</h5>
-                                    <p>Show ao vivo com mix de covers e autorais</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
-                                <div class="carousel-caption">
-                                    <h5>Aniversário de 50 anos</h5>
-                                    <p>Repertório nostálgico com hits dos anos 80 e 90</p>
+    <section id="events" class="py-20 md:py-32 bg-dark-900 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Eventos Passados</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto reveal">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    <div class="card-effect rounded-2xl overflow-hidden group">
+                        <div class="carousel-item rounded-t-2xl" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                            <div class="h-full bg-black bg-opacity-50 flex items-end p-6 group-hover:bg-opacity-70 transition-all">
+                                <div>
+                                    <h5 class="text-white font-bold text-xl mb-2">Casamento Ana & João</h5>
+                                    <p class="text-dark-200">Cerimônia íntima com repertório personalizado</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
+                    </div>
+                    
+                    <div class="card-effect rounded-2xl overflow-hidden group">
+                        <div class="carousel-item rounded-t-2xl" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
+                            <div class="h-full bg-black bg-opacity-50 flex items-end p-6 group-hover:bg-opacity-70 transition-all">
+                                <div>
+                                    <h5 class="text-white font-bold text-xl mb-2">Festa Corporativa TechCon</h5>
+                                    <p class="text-dark-200">Show ao vivo com mix de covers e autorais</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-effect rounded-2xl overflow-hidden group">
+                        <div class="carousel-item rounded-t-2xl" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');">
+                            <div class="h-full bg-black bg-opacity-50 flex items-end p-6 group-hover:bg-opacity-70 transition-all">
+                                <div>
+                                    <h5 class="text-white font-bold text-xl mb-2">Aniversário de 50 anos</h5>
+                                    <p class="text-dark-200">Repertório nostálgico com hits dos anos 80 e 90</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -359,111 +248,115 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-dark-secondary">
-        <div class="container">
-            <h2 class="section-title fade-in">Entre em Contato</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form fade-in glow-border">
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Seu nome" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Seu e-mail" required>
-                                </div>
+    <section id="contact" class="py-20 md:py-32 bg-dark-800 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto reveal">
+                <div class="card-effect rounded-3xl p-8 md:p-12">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:border-white transition-all text-white placeholder-dark-400" placeholder="Seu nome" required>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Assunto">
-                                </div>
+                            <div>
+                                <input type="email" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:border-white transition-all text-white placeholder-dark-400" placeholder="Seu e-mail" required>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Sua mensagem" required></textarea>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-glow btn-primary-glow">Enviar Mensagem</button>
-                                    <a href="https://wa.me/5524998540552?text=Olá! Gostaria de mais informações sobre sua apresentação musical." class="btn btn-glow ms-3" target="_blank">
-                                        <i class="fab fa-whatsapp me-2"></i>WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div>
+                            <input type="text" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:border-white transition-all text-white placeholder-dark-400" placeholder="Assunto">
+                        </div>
+                        <div>
+                            <textarea rows="5" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:border-white transition-all text-white placeholder-dark-400 resize-none" placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button type="submit" class="btn-glow btn-primary-glow py-4 px-8 rounded-full font-semibold text-lg">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Enviar Mensagem
+                            </button>
+                            <a href="https://wa.me/5524998540552?text=Olá! Gostaria de mais informações sobre sua apresentação musical." class="btn-glow py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center" target="_blank">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
-                    <h4 class="glow-text">SOARINHO</h4>
-                    <p>Música para eventos especiais</p>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end">
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-spotify"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <footer class="bg-dark-900 py-12 border-t border-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="../marca-soarinho.png" alt="Marca Soarinho" class="h-6 w-auto opacity-80">
+                        <img src="../logo-soarinho.png" alt="Soarinho" class="h-8 w-auto">
                     </div>
+                    <p class="text-dark-400">Música para eventos especiais</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://open.spotify.com/intl-pt/artist/5f2rUX3TWTtIjOiUuscI6e?si=wZOs2RH9QYCxpdOxmr_Osw" target="_blank" class="w-12 h-12 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-dark-400 hover:text-white hover:border-white transition-all">
+                        <i class="fab fa-spotify text-xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@osoarinho" target="_blank" class="w-12 h-12 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-dark-400 hover:text-white hover:border-white transition-all">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/osoarinho" target="_blank" class="w-12 h-12 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-dark-400 hover:text-white hover:border-white transition-all">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" class="w-12 h-12 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-dark-400 hover:text-white hover:border-white transition-all">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
                 </div>
             </div>
-            <hr class="mt-4 mb-4" style="border-color: #333;">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p>2025 | Soarinho. Todos os direitos reservados.</p>
-                </div>
+            <div class="pt-8 border-t border-dark-800 text-center text-dark-500 text-sm">
+                <p>2025 | Soarinho. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Scroll suave para links internos
-        $(document).ready(function(){
-            $('a[href^="#"]').on('click', function(event) {
-                var target = $(this.getAttribute('href'));
-                if(target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 70
-                    }, 1000);
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-            
-            // Animação de fade-in ao rolar a página
-            function checkFade() {
-                $('.fade-in').each(function() {
-                    var elementTop = $(this).offset().top;
-                    var elementBottom = elementTop + $(this).outerHeight();
-                    var viewportTop = $(window).scrollTop();
-                    var viewportBottom = viewportTop + $(window).height();
-                    
-                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                        $(this).addClass('visible');
-                    }
-                });
-            }
-            
-            // Verificar elementos ao carregar e ao rolar
-            $(window).on('scroll load', checkFade);
-            
-            // Simular envio do formulário
-            $('#contactForm').on('submit', function(e) {
-                e.preventDefault();
-                alert('Obrigado pelo seu interesse! Entrarei em contato em breve.');
-                this.reset();
+        });
+        
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        reveals.forEach(reveal => {
+            revealObserver.observe(reveal);
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu interesse! Entrarei em contato em breve.');
+            this.reset();
         });
     </script>
 </body>

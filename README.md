@@ -1,6 +1,6 @@
-# Soarinho Música
+# Música
 
-Site do serviço de música e shows.
+Site do serviço de música e shows oferecido por Soarinho.
 
 ## 🌐 Acesso
 

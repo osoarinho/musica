@@ -95,7 +95,7 @@
         }
         
         * {
-            cursor: auto;
+            cursor: none;
         }
         
         .custom-cursor {
@@ -108,7 +108,7 @@
             z-index: 9999;
             mix-blend-mode: difference;
             transition: transform 0.1s ease;
-            display: none;
+            display: block;
         }
         
         .cursor-dot {
@@ -120,7 +120,7 @@
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            display: none;
+            display: block;
         }
         
         @media (max-width: 768px) {
@@ -352,6 +352,11 @@
             <div class="max-w-5xl mx-auto reveal">
                 <div class="card-effect rounded-3xl p-8 md:p-12">
                     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/1krIeqbTTMaVrVjtifZIiq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="max-w-5xl mx-auto reveal mt-8">
+                <div class="card-effect rounded-3xl p-8 md:p-12">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5rdwmtmNwaDmfXgMEbPRMs?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
         </div>

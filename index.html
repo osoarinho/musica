@@ -609,8 +609,8 @@
                         Início
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#music" class="text-dark-200 hover:text-white transition-colors font-medium relative group">
-                        Música
+                    <a href="#portfolio" class="text-dark-200 hover:text-white transition-colors font-medium relative group">
+                        Portfólio
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="#events" class="text-dark-200 hover:text-white transition-colors font-medium relative group">
@@ -644,7 +644,7 @@
             <nav class="p-4">
                 <div class="flex flex-col space-y-2">
                     <a href="#hero" class="text-dark-200 hover:text-white transition-colors font-medium block py-3 px-4 rounded-lg hover:bg-dark-800">Início</a>
-                    <a href="#music" class="text-dark-200 hover:text-white transition-colors font-medium block py-3 px-4 rounded-lg hover:bg-dark-800">Música</a>
+                    <a href="#portfolio" class="text-dark-200 hover:text-white transition-colors font-medium block py-3 px-4 rounded-lg hover:bg-dark-800">Portfólio</a>
                     <a href="#events" class="text-dark-200 hover:text-white transition-colors font-medium block py-3 px-4 rounded-lg hover:bg-dark-800">Eventos</a>
                     <a href="#contact" class="text-dark-200 hover:text-white transition-colors font-medium block py-3 px-4 rounded-lg hover:bg-dark-800">Contato</a>
                     <a href="https://soarinho.com" class="text-gray-500 hover:text-gray-300 transition-colors text-sm block py-3 px-4 rounded-lg hover:bg-dark-800">Hub Central</a>
@@ -659,18 +659,13 @@
         <div class="absolute inset-0 bg-gradient-to-br from-dark-800 via-dark-900 to-dark-900 z-0">
             <!-- Hero Background Image -->
             <div class="absolute inset-0 z-0 image-overlay-dark opacity-30">
-                <img src="https://soarinho.com/portraits/musica-background.png" alt="Soarinho - Músico" class="parallax-image" id="hero-bg-image" onerror="this.onerror=null; this.src='https://soarinho.com/identity/marca-soarinho.png';">
-            </div>
-            <!-- Animated Music Background -->
-            <div class="absolute inset-0 pointer-events-none z-0">
-                <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 40%, rgba(255,200,100,0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(200,150,255,0.1) 0%, transparent 50%); animation: music-pulse 6s ease-in-out infinite;"></div>
-                <div class="absolute inset-0 opacity-30" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px); animation: music-wave 10s linear infinite;"></div>
+                <img src="https://soarinho.com/portraits/playing2.jpg" alt="Soarinho - Músico" class="parallax-image" id="hero-bg-image" onerror="this.onerror=null; this.src='https://soarinho.com/identity/marca-soarinho.png';">
             </div>
         </div>
         <div class="container mx-auto px-4 z-10 relative">
             <div class="max-w-4xl mx-auto text-center reveal">
                 <div class="mb-6 animate-float flex justify-center">
-                    <img src="https://soarinho.com/portraits/musica.png" alt="Soarinho - Músico" class="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-2xl md:rounded-3xl object-cover object-center shadow-2xl border-2 border-white/20 opacity-95" onerror="this.onerror=null; this.src='https://soarinho.com/identity/marca-soarinho.png';">
+                    <img src="https://soarinho.com/portraits/playing3.jpg" alt="Soarinho - Músico" class="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-2xl md:rounded-3xl object-cover object-center shadow-2xl border-2 border-white/20 opacity-95" onerror="this.onerror=null; this.src='https://soarinho.com/identity/marca-soarinho.png';">
                 </div>
                 <p class="text-xl md:text-2xl text-dark-200 mb-10">Músico Cantor e Multi-Instrumentista.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -678,31 +673,75 @@
                         <i class="fas fa-calendar-check mr-2"></i>
                         Contrate para Eventos
                     </a>
-                    <a href="#music" class="btn-glow py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center">
+                    <a href="#portfolio" class="btn-glow py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center">
                         <i class="fas fa-music mr-2"></i>
-                        Ouça Meu Trabalho
+                        Veja Meu Portfólio
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Music Player Section -->
-    <section id="music" class="py-20 md:py-32 bg-dark-800 relative">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 md:py-32 bg-dark-800 relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Minha Música</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Portfólio</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
             </div>
             
-            <div class="max-w-5xl mx-auto reveal">
-                <div class="card-effect rounded-3xl p-8 md:p-12">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/1krIeqbTTMaVrVjtifZIiq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
-            <div class="max-w-5xl mx-auto reveal mt-8">
-                <div class="card-effect rounded-3xl p-8 md:p-12">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5rdwmtmNwaDmfXgMEbPRMs?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <!-- Cello - Clipe de Carol Cidral -->
+                    <div class="reveal">
+                        <div class="card-effect rounded-2xl p-6 md:p-8 h-full flex flex-col">
+                            <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/wI8rmqUUZHk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="text-center flex-grow flex flex-col">
+                                <h4 class="text-xl md:text-2xl font-bold text-white mb-2">Cello - Clipe de Carol Cidral | Ordinary</h4>
+                                <p class="text-dark-300 text-base md:text-lg mb-4">Participação de Violoncelo no clipe cover de Carol Cidral da música Ordinary (Alex Warren) em Angra dos Reis - RJ</p>
+                                <a href="https://www.youtube.com/watch?v=wI8rmqUUZHk" target="_blank" class="btn-glow py-3 px-8 rounded-full font-semibold text-base inline-flex items-center justify-center mt-auto">
+                                    <i class="fab fa-youtube mr-2"></i>
+                                    Ver no Youtube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spotify Album -->
+                    <div class="reveal">
+                        <div class="card-effect rounded-2xl p-6 md:p-8 h-full flex flex-col">
+                            <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/1krIeqbTTMaVrVjtifZIiq?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="text-center flex-grow flex flex-col">
+                                <h4 class="text-xl md:text-2xl font-bold text-white mb-2">Fragmentos de Amor - Soarinho</h4>
+                                <p class="text-dark-300 text-base md:text-lg mb-4">Ouça minhas composições e produções musicais no Spotify.</p>
+                                <a href="https://open.spotify.com/album/1krIeqbTTMaVrVjtifZIiq" target="_blank" class="btn-glow py-3 px-8 rounded-full font-semibold text-base inline-flex items-center justify-center mt-auto">
+                                    <i class="fab fa-spotify mr-2"></i>
+                                    Ouvir no Spotify
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spotify Track -->
+                    <div class="reveal">
+                        <div class="card-effect rounded-2xl p-6 md:p-8 h-full flex flex-col">
+                            <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5rdwmtmNwaDmfXgMEbPRMs?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                            <div class="text-center flex-grow flex flex-col">
+                                <h4 class="text-xl md:text-2xl font-bold text-white mb-2">I know Her - Loui ft. Soarinho</h4>
+                                <p class="text-dark-300 text-base md:text-lg mb-4">Ouça minha participação em collab com Loui no Spotify.</p>
+                                <a href="https://open.spotify.com/track/5rdwmtmNwaDmfXgMEbPRMs" target="_blank" class="btn-glow py-3 px-8 rounded-full font-semibold text-base inline-flex items-center justify-center mt-auto">
+                                    <i class="fab fa-spotify mr-2"></i>
+                                    Ouvir no Spotify
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
